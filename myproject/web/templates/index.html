@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block title %}Pandemic Data{% endblock %}
+
+{% block content %}
+
+    <center><h1>Pandemic Data</h1></center>
+
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Country Name</th>
+            <th scope="col">Coronavirus Cases</th>
+            <th scope="col">Deaths</th>
+            <th scope="col">Recovered</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for d in data %}
+          <tr>
+            <td>{{ d.country_name }}</td>
+            <td>{{ d.coronavirus_cases }}</td>
+            <td>{{ d.deaths }}</td>
+            <td>{{ d.recovered }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+{% endblock %}
+
+
